@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shopping Cart</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="images/trolley.png" width="50px" alt="trolly"></a>
+      <div class="collapse navbar-collapse text-white" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link text-white fw-bold" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-bold" href="#">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fw-bold" href="#">Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h2 id="orderConfirm" class="orderSubmit">
+    Congratulations! Order Confirmed
+  </h2>
+  <section>
+    <div id="productDashboard" class="container">
+      <h2 class="text-center mt-4">CART</h2>
+      <div class="cart">
+        <divclass="col-md-12 col-lg-10 mx-auto">
+          <div class="cart-item">
+            <div class="row">
+              <div class="col-md-7 center-item">
+                <img src="images/headphone-1.jpg" alt="" />
+                <h5>Razer Kraken Gaming Headset</h5>
+              </div>
+
+              <div class="col-md-5 center-item">
+                <div class="input-group number-spinner">
+                  <button onclick="handleProductCount('firstHeadset',false)" class="btn btn-default">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <input id="firstHeadsetCount" type="number" min="0" class="form-control text-center" value="1" />
+                  <button onclick="handleProductCount('firstHeadset',true)" class="btn btn-default">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <h5 id="firstHeadsetPrice">$259</h5>
+                <img src="images/remove.png" alt="" class="remove-item" />
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="row">
+              <div class="col-md-7 center-item mx-auto">
+                <img src="images/headphone-2.jpg" alt="" />
+                <h5>Razer Kraken Gaming Headset</h5>
+              </div>
+              <div class="col-md-5 center-item">
+                <div class="input-group number-spinner">
+                  <button onclick="handleProductCount('secondHeadset', false)" class="btn btn-default">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <input id="secondHeadsetCount" type="number" min="0" class="form-control text-center" value="1" />
+                  <button onclick="handleProductCount('secondHeadset', true)" class="btn btn-default">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <h5 id="secondHeadsetPrice">$85</h5>
+                <img src="images/remove.png" alt="" class="remove-item" />
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="row">
+              <div class="col-md-7 center-item mx-auto">
+                <img src="images/headphone-3.jpg" alt="" />
+                <h5>
+                  Targeal 7.1 Surround Sound Gaming Headset</h5>
+              </div>
+              <div class="col-md-5 center-item">
+                <div class="input-group number-spinner">
+                  <button onclick="handleProductCount( 'thirdHeadset', false)" class="btn btn-default">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <input id="thirdHeadsetCount" type="number" min="0" class="form-control text-center" value="1" />
+                  <button onclick="handleProductCount('thirdHeadset', true)" class="btn btn-default">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <h5 id="thirdHeadsetPrice">$159</h5>
+                <img src="images/remove.png" alt="" class="remove-item" />
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="row">
+              <div class="col-md-8">
+                <h5 id="subTotal">Subtotal:</h5>
+                <h5>Tax (15% VAT):</h5>
+                <h5>Total:</h5>
+              </div>
+
+              <div class="col-md-4 status">
+                <h5 id="subtotalAmount">$987</h5>
+                <h5 id="taxAmount">$0</h5>
+                <h5 id="total">$1,178</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 pt-4 pb-4">
+            <button id="proceedBtn" type="button" class="btn btn-primary check-out">
+              Proceed To Checkout
+            </button>
+          </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <script src="app.js"></script>
+</body>
+
+</html>
